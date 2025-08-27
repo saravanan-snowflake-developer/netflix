@@ -13,9 +13,8 @@ The pipeline is designed for:
 ## 🏗️ Architecture (Layered View)
 ```mermaid
 flowchart TD
-    A[Azure Blob Storage] --> B[Stage Layer (Raw Ingestion)]
+    A[Azure Blob Storage] --> B[Stage Layer - Raw Ingestion]
     B --> C[Staging Tables]
-    C --> D[Dim Layer (Dimensions)]
+    C --> D[Dim Layer - Dimensions]
     D --> E[Fact / Mart Layer]
-    E --> F[Analytics Layer (Power BI / Dashboards)]
-
+    E --> F[Analytics Layer - Power BI / Dashboards]
