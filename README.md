@@ -9,12 +9,13 @@ The pipeline is designed for:
 
 ---
 
-## 🏗️ Architecture
+ 
+## 🏗️ Architecture (Layered View)
+```mermaid
+flowchart TD
+    A[Azure Blob Storage] --> B[Stage Layer (Raw Ingestion)]
+    B --> C[Staging Tables]
+    C --> D[Dim Layer (Dimensions)]
+    D --> E[Fact / Mart Layer]
+    E --> F[Analytics Layer (Power BI / Dashboards)]
 
-This gives a **clear warehouse layer flow**:  
-- **Stage Layer** → raw data from Blob into Snowflake stage  
-- **Dim Layer** → cleaned dimensions (dim_users, dim_movies, etc.)  
-- **Fact/Mart Layer** → business-ready fact tables (fact_ratings, fact_views, etc.)  
-- **Analytics Layer** → BI dashboards & reporting  
-
-👉 Do you want me to **combine both views** (detailed + layered) into the README so teammates can understand at both *component* and *data layer* levels?
